@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="de" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <title>ArtExplorer • Entdecke Kunst aus aller Welt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="description" content="Semesterarbeit-IM2 - entdecke Kunstwerke aus dem Metropolitan Museum of Art mit ArtExplorer">
+  <meta name="theme-color" content="#96a296">
+
+  <!-- iOS Safari spezifische Meta-Tags -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splashScreen" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-logo">
+        <i class="bi bi-palette2"></i>
+        <h1>ArtExplorer</h1>
+      </div>
+      <div class="splash-loader">
+        <div class="paint-brush">
+          <div class="brush-stroke"></div>
+        </div>
+        <p>Lade Kunstwerke...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Overlay -->
+  <nav id="navbar" class="navbar navbar-expand-lg position-fixed top-0 w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <i class="bi bi-palette2 me-2"></i>
+        ArtExplorer
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home" data-page="home">
+              <i class="bi bi-house me-1"></i>Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#info" data-page="info">
+              <i class="bi bi-info-circle me-1"></i>Information
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tutorial" data-page="tutorial">
+              <i class="bi bi-question-circle me-1"></i>Anleitung
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" data-page="contact">
+              <i class="bi bi-envelope me-1"></i>Kontakt
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#credits" data-page="credits">
+              <i class="bi bi-award me-1"></i>Credits
+            </a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <input type="color" id="accentPicker" class="accent-picker" title="Akzentfarbe wählen" value="#96a296" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Wählen Sie Ihre bevorzugte Akzentfarbe">
+          <button id="themeToggle" class="btn btn-theme" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Zwischen Hell- und Dunkelmodus wechseln">
+            <i class="bi bi-moon-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="mainContent">
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+      <div id="feedWrapper">
+        <div id="sentinelBottom"></div>
+      </div>
+    </div>
+
+    <!-- Information Page -->
+    <div id="infoPage" class="page info-page">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 mb-4"><i class="bi bi-info-circle me-3"></i>Über ArtExplorer</h1>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Entdecke Kunst neu</h5>
+                <p class="card-text">
+                  ArtExplorer bringt Ihnen die Welt der Kunst näher. Durchstöbern Sie Tausende von Kunstwerken
+                  aus dem Metropolitan Museum of Art in New York und entdecken Sie Meisterwerke aus verschiedenen
+                  Epochen und Kulturen.
+                </p>
+                <h6 class="mt-4">Features:</h6>
+                <ul class="list-unstyled">
+                  <li><i class="bi bi-check-circle text-success me-2"></i>Unendlicher Scroll durch Kunstwerke</li>
+                  <li><i class="bi bi-check-circle text-success me-2"></i>Detaillierte Informationen zu jedem Werk</li>
+                  <li><i class="bi bi-check-circle text-success me-2"></i>Google-Suche für weitere Recherche</li>
+                  <li><i class="bi bi-check-circle text-success me-2"></i>Dark Mode für angenehmes Browsing</li>
+                  <li><i class="bi bi-check-circle text-success me-2"></i>Anpassbare Akzentfarben</li>
+                  <li><i class="bi bi-check-circle text-success me-2"></i>Vollständig responsive</li>
+                  <li><i class="bi bi-check-circle text-success me-2"></i>iOS-optimiert</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tutorial Page -->
+    <div id="tutorialPage" class="page info-page">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 mb-4"><i class="bi bi-question-circle me-3"></i>Anleitung</h1>
+            <div class="accordion" id="tutorialAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step1">
+                    <i class="bi bi-1-circle me-2"></i>Navigation
+                  </button>
+                </h2>
+                <div id="step1" class="accordion-collapse collapse show" data-bs-parent="#tutorialAccordion">
+                  <div class="accordion-body">
+                    Scrollen Sie durch die Kunstwerke oder verwenden Sie die Navigationspfeile.
+                    Jedes Bild passt sich automatisch an Ihren Bildschirm an.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step2">
+                    <i class="bi bi-2-circle me-2"></i>Details anzeigen
+                  </button>
+                </h2>
+                <div id="step2" class="accordion-collapse collapse" data-bs-parent="#tutorialAccordion">
+                  <div class="accordion-body">
+                    Klicken Sie auf den Info-Button (ℹ️) um detaillierte Informationen zum Kunstwerk zu erhalten.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step3">
+                    <i class="bi bi-3-circle me-2"></i>Google-Suche
+                  </button>
+                </h2>
+                <div id="step3" class="accordion-collapse collapse" data-bs-parent="#tutorialAccordion">
+                  <div class="accordion-body">
+                    Nutzen Sie den Google-Button (🔍) um weitere Informationen über das Kunstwerk zu finden.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step4">
+                    <i class="bi bi-4-circle me-2"></i>Personalisierung
+                  </button>
+                </h2>
+                <div id="step4" class="accordion-collapse collapse" data-bs-parent="#tutorialAccordion">
+                  <div class="accordion-body">
+                    Wechseln Sie zwischen Hell- und Dunkelmodus und wählen Sie Ihre bevorzugte Akzentfarbe.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contactPage" class="page info-page">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 mb-4"><i class="bi bi-envelope me-3"></i>Kontakt</h1>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card h-100">
+                  <div class="card-body text-center">
+                    <i class="bi bi-code-slash display-1 text-primary mb-3"></i>
+                    <h5 class="card-title">Entwicklung</h5>
+                    <p class="card-text">
+                     <b> Leroy Overdick<br>
+                         Semesterarbeit IM2 (Interaktive Medien2)</b><br>
+                      Diese Web App wurde als Demonstration für moderne Web-Technologien entwickelt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100">
+                  <div class="card-body text-center">
+                    <i class="bi bi-github display-1 text-primary mb-3"></i>
+                    <h5 class="card-title">Open Source</h5>
+                    <p class="card-text">
+                      <a href="https://github.com/Toadzi/ArtExplorer" target="_blank">Der Quellcode steht für Bildungszwecke zur Verfügung.</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Credits Page -->
+    <div id="creditsPage" class="page info-page">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 mb-4"><i class="bi bi-award me-3"></i>Credits</h1>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Danksagungen</h5>
+                <div class="row mt-4">
+                  <div class="col-md-4">
+                    <h6><i class="bi bi-building me-2"></i>Metropolitan Museum of Art</h6>
+                    <p class="small text-muted">
+                      Kunstwerke und Daten bereitgestellt durch die
+                      <a href="https://metmuseum.github.io/" target="_blank">Met Collection API</a>
+                    </p>
+                  </div>
+                  <div class="col-md-4">
+                    <h6><i class="bi bi-bootstrap me-2"></i>Technologien</h6>
+                    <ul class="list-unstyled small text-muted">
+                      <li>• Bootstrap 5</li>
+                      <li>• jQuery</li>
+                      <li>• Bootstrap Icons</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <h6><i class="bi bi-palette me-2"></i>Meine Oma</h6>
+                      <p class="small text-muted">
+                        Von der ich viel über Kunst gelernt habe. Ihre Geschichten über große Meister
+                        und die Art, wie sie Kunstwerke betrachtete, haben meine Liebe zur Kunst geprägt.
+                        Diese App trägt ihren Geist der Neugier und Wertschätzung in sich.
+                        <a href="https://elisabeth-ruetsche.de/" target="_blank">Elisabeth Rütsche</a>
+                      </p>
+                  </div>
+                </div>
+                <hr>
+                <p class="small text-muted mb-0">
+                  <i class="bi bi-cc-circle me-1"></i>
+                  Alle Kunstwerke sind gemeinfrei und stammen aus der Sammlung des Metropolitan Museum of Art.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Artwork Detail Modal -->
+  <div class="modal fade" style="pointer-events: none;" id="metaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" style="pointer-events: auto;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Werkdetails</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+          <button type="button" class="btn btn-primary" id="googleSearchBtn">
+            <i class="bi bi-search me-1"></i>Google Suche
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div id="loader" class="loading-indicator">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Lädt...</span>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
