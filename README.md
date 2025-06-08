@@ -1,6 +1,7 @@
+
 <h1>Kurzbeschreibung:</h1>
 ArtExplorer  verbindet moderne Webtechnologie mit klassischer Kunst. Die Web App nutzt die Met Museum API, um Kunstwerke in einem Instagram-ähnlichen Feed zu präsentieren. Mit Intersection Observer für Infinite Scroll, CSS Custom Properties für Theming und responsivem Design. Eine Hommage an die Kunst, entwickelt mit JavaScript ES6+, Bootstrap, viel Kaffee, noch mehr graue Haare, selbstzweifel und viel Liebe.
-
+<h3>Link zur Website: https://web-app-server.de/artexplorer/</h3>
 <h1>Learnings und Schwierigkeiten:</h1>
 Ich hatte Probleme mit Dark Mode CSS-Feintuning, API Rate Limiting der Met Museum API und Bootstrap Modal Scroll-Konflikte auf Mobile Geräten zu lösen. + iOS Safari Viewport-Herausforderungen.
 
