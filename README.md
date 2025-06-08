@@ -19,6 +19,6 @@ Ich hatte Probleme mit Dark Mode CSS-Feintuning, API Rate Limiting der Met Museu
 <li>Die Navigation soll Fixed sein und in der obersten Ebene</li>
 <li>Infinity scroll funktioniert nicht, es soll nach dem 6 Bild weitere 6 Datensätze nachladen</li>
 </ul>
-<p>Und habe dann den Code gepostet, aber es kam nur Mist dabei raus.
-ChatGPT war bei der Fehlersuche bis zu einem gewissen Grad ganz hilfreich, aber für die Mobile Version für das IPhone war es nicht hilfreich.
-Aber ChatGPT hat mich darauf hingewiesen, das Abfragen von Kategorien bei der verwendeten API fehleerhaft ist. Das war echt hilfreich, denn da habe ich mich lange gewunder warum das nicht wirklich funktioniert. Denn bevor ich das durch die KI darauf aufmerksam gemacht worden bin, wurden immer nur ein paar Bilder geladen.</p>
+<p>Und habe dann den Code gepostet, aber es kam nur Mist dabei raus.</p>
+ChatGPT war bei der Fehlersuche bis zu einem gewissen Grad ganz praktisch, aber für die Mobile Version für das IPhone war es für mich relativ nutzlos.
+Aber ChatGPT hat mich darauf hingewiesen, das Abfragen von Kategorien bei der verwendeten API fehlerhaft sind. Das war echt hilfreich, denn da habe ich mich lange gewunder warum das nicht wirklich funktioniert. Denn bevor ich das durch die KI darauf aufmerksam gemacht worden bin, wurden immer nur ein paar Bilder geladen.</p>
